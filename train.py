@@ -21,7 +21,7 @@ parser.add_argument('--batch-size', default=32, type=int,
                    help='batch_size(default:128)')
 parser.add_argument('--num-epochs', default=20, type=int,
                    help='number of epoch')
-parser.add_argument('--lr', default=0.0000001, type=float,
+parser.add_argument('--lr', default=0.000001, type=float,
                    help='learning rate')
 parser.add_argument('--beta1', default=0.9, type=float,
                    help='beta hyperparam for Adam optimizers')
@@ -99,7 +99,7 @@ if __name__ == '__main__':
         print("let us use", torch.cuda.device_count(), " GPUs")
         model = nn.DataParallel(model)
     model.to(device)
-    model.load_state_dict(torch.load("./model/Classification_23.pth"))
+#     model.load_state_dict(torch.load("./model/Classification_23.pth"))
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=args.lr, betas=(args.beta1, 0.999))
