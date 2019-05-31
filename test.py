@@ -79,10 +79,10 @@ if __name__ == '__main__':
 
     # 生成结果文件
     for i in range(8):
-        model_name = "Classification_%d.pth"%(i+20)
+        model_name = "Classification_%d.pth"%(i)
         print(model_name)
         MODEL_PATH = os.path.join("./model",model_name)
-        file_name = "output%d.csv"%(i+20)
+        file_name = "output%d.csv"%(i)
         OUTPUT_CSV_PATH = os.path.join('./output', file_name)
         print(OUTPUT_CSV_PATH)
         make_output_csv(SRC_IMAGE_DIR, OUTPUT_CSV_PATH, MODEL_PATH)
